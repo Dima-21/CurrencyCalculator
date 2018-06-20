@@ -5,8 +5,52 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CurrencyCalculator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Калькулятор валют" Height="330" Width="300"
+        Icon="Images/MainLogo.png"
+        MinWidth="200" MinHeight="330"
+        MaxHeight="330"
+      >
+    <Window.Resources>
+        <Style TargetType="Image">
+            <Setter Property="Width" Value="20"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Grid.Column" Value="0"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Margin" Value="0,10"/>
+            <Setter Property="BorderBrush" Value="Lime"/>
+            <Setter Property="Grid.Column" Value="1"/>
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="FontSize" Value="25"/>
+        </Style>
+    </Window.Resources>
     <Grid>
-        
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/Background.jpg" />
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Image  Grid.Row="0" Source="Images/MainLogo.png" />
+        <Image  Grid.Row="1" Source="Images/hryvnia.png" />
+        <Image  Grid.Row="2" Source="Images/rub.png" />
+        <Image  Grid.Row="3" Source="Images/dollar.png" />
+        <Image  Grid.Row="4" Source="Images/euro.png" />
+
+        <Label Grid.Row="0" Grid.Column="1" Content="Калькулятор валют" FontFamily="Comic Sans MS" FontSize="23"/>
+        <TextBox x:Name="grn" Grid.Row="1" KeyUp="TextBox_KeyUp"/>
+        <TextBox  x:Name="rub" Grid.Row="2" KeyUp="TextBox_KeyUp"/>
+        <TextBox  x:Name="dollar" Grid.Row="3" KeyUp="TextBox_KeyUp"/>
+        <TextBox  x:Name="euro" Grid.Row="4" KeyUp="TextBox_KeyUp"/>
     </Grid>
 </Window>
